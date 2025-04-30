@@ -1,0 +1,82 @@
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* Base styling without the background image (now handled in React) */
+  background-color: #0a1128; /* Fallback color */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  
+  /* Text styles */
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Apply a subtle overlay to ensure text readability */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(10, 17, 40, 0.4); /* Dark blue overlay */
+  z-index: -1;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Typography */
+h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 2rem 0 1rem;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow for better readability */
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 2rem 0 1rem;
+  color: #ffffff;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Sections spacing */
+section {
+  padding: 3rem 0;
+}
+
+/* Highlight important elements */
+.coding-time {
+  color: #7fb3ff;
+  font-weight: 600;
+}
+ 
