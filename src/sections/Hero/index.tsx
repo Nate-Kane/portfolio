@@ -1,4 +1,3 @@
-import React from 'react';
 import useCodeTime from '../../hooks/useCodeTime';
 
 const startDate = new Date(2020, 10, 1); // November 1, 2020
