@@ -10,9 +10,9 @@ type TimeObject = {
 };
 
 /**
- * Custom hook to calculate time since a specific date
- * @param startDate The date you started coding
- * @returns Object containing years, months, days, hours, minutes, seconds
+ * Custom hook to calculate time since a specific date with live ticking
+ * @param startDate (will pass the date I started coding)
+ * @returns Object containing years, months, days, hours, minutes, seconds that updates in real-time
  */
 const useCodeTime = (startDate: Date): TimeObject => {
   const [time, setTime] = useState<TimeObject>({
@@ -25,7 +25,7 @@ const useCodeTime = (startDate: Date): TimeObject => {
   });
 
   useEffect(() => {
-    const calculateTime = () => {
+    const calculateInitialTime = () => {
       const now = new Date();
       const diff = now.getTime() - startDate.getTime();
       
@@ -36,16 +36,58 @@ const useCodeTime = (startDate: Date): TimeObject => {
       const months = Math.floor(diff / (1000 * 60 * 60 * 24 * 30)) % 12;
       const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
 
-      setTime({ years, months, days, hours, minutes, seconds });
+      return { years, months, days, hours, minutes, seconds };
     };
 
-    // Calculate time immediately
-    calculateTime();
+    const initialTime = calculateInitialTime();
+    setTime(initialTime);
     
-    // Update every minute instead of every second (60000ms = 1 minute)
-    const interval = setInterval(calculateTime, 60000);
+    const timer = setInterval(() => {
+      setTime(prevTime => {
+        let newSeconds = prevTime.seconds + 1;
+        let newMinutes = prevTime.minutes;
+        let newHours = prevTime.hours;
+        let newDays = prevTime.days;
+        let newMonths = prevTime.months;
+        let newYears = prevTime.years;
+        
+        if (newSeconds >= 60) {
+          newSeconds = 0;
+          newMinutes += 1;
+          
+          if (newMinutes >= 60) {
+            newMinutes = 0;
+            newHours += 1;
+            
+            if (newHours >= 24) {
+              newHours = 0;
+              newDays += 1;
+              
+              if (newDays >= 30) {
+                newDays = 0;
+                newMonths += 1;
+                
+                if (newMonths >= 12) {
+                  newMonths = 0;
+                  newYears += 1;
+                }
+              }
+            }
+          }
+        }
+        
+        return {
+          years: newYears,
+          months: newMonths,
+          days: newDays,
+          hours: newHours,
+          minutes: newMinutes,
+          seconds: newSeconds
+        };
+      });
+    }, 1000);
 
-    return () => clearInterval(interval);
+    return () => clearInterval(timer);
   }, [startDate]);
 
   return time;
