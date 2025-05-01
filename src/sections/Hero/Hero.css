@@ -3,18 +3,19 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  min-height: 50vh;
+  min-height: 65vh;
   padding: 0 2rem;
 }
 
 .hero-section h1 {
   font-size: 5rem;
   margin-bottom: 0.5rem;
+  margin-top: 2rem;
   font-weight: 800;
-  background: linear-gradient(to bottom, #fff 60%, rgba(41, 98, 255, 0.3) 100%);
+  /* background: linear-gradient(to bottom, #fff 60%, rgba(41, 98, 255, 0.3) 100%);
   background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
+  -webkit-background-clip: text; */
+  color: rgb(255, 255, 255);
   letter-spacing: -0.5px;
   line-height: 1.1;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -57,6 +58,7 @@
   line-height: 1.4;
   letter-spacing: 0.5px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(1px);
 }
 
 @keyframes pulse {
@@ -81,6 +83,7 @@
   align-self: flex-start;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   margin-right: auto;
+  backdrop-filter: blur(1px);
 }
 
 @media (max-width: 600px) {
@@ -89,6 +92,7 @@
   }
   .hero-section h1 {
     font-size: 3rem;
+    margin-top: 1rem;
   }
   .role-text {
     font-size: 1.3rem;

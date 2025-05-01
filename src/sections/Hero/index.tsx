@@ -26,12 +26,12 @@ const Hero = () => {
 
   return (
     <section className="hero-section">
-      <h1>Nate Kane</h1>
+      <h1 className="section-header">Nate Kane</h1>
       <div className="developer-status">
         <div className="role-text">Software Engineer | Web Developer</div>
         <div className="time-container">
           <div className="coding-time">{formatTime()}</div>
-          <div className="ticking-seconds">{time.minutes} minutes and {time.seconds} seconds</div>
+          <div className="ticking-seconds">{time.minutes} {time.minutes === 1 ? 'minute' : 'minutes'} and {time.seconds} {time.seconds === 1 ? 'second' : 'seconds'}</div>
         </div>
       </div>
     </section>

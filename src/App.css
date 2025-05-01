@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: default;
 }
 
 html, body {
@@ -113,6 +114,21 @@ p {
 section {
   padding: 5rem 0;
   min-height: 80vh; /* Ensure sections take up significant space to enable scrolling */
+}
+
+/* Section headers with sticky scrolling effect */
+.section-header {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: 10;
+  padding: 0;
+  width: fit-content;
+  font-weight: 700;
+  color: white;
+  transition: all 0.3s ease;
+  margin: 0;
 }
 
 /* Highlight important elements */
