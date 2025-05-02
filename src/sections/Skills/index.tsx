@@ -18,6 +18,7 @@ const Skills = () => {
       <h2 className="section-header">Skills</h2>
       <div className="skills-container">
         <div className="skill-category">
+          <br/>
           <h3>Specialization</h3>
           <div className="skill-badges">
             <SkillBadge name="JavaScript" logo="/logos/javascript.svg" />
@@ -49,6 +50,7 @@ const Skills = () => {
             <SkillBadge name="CMS Platforms" logo="/logos/cms.svg" />
           </div>
         </div>
+        <br/>
       </div>
     </section>
   );
