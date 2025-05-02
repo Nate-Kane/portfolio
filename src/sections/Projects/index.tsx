@@ -57,7 +57,7 @@ const Projects = () => {
       <h2 className="section-header">Projects</h2>
       <div className="projects-container">
         <div className="card-slider">
-          <div className="main-card-wrapper" onClick={() => handleCardClick(getNextIndex(activeIndex))}>
+          <div className="main-card-wrapper">
             <ProjectCard
               imageUrl={projectsData[activeIndex].imageUrl}
               title={projectsData[activeIndex].title}

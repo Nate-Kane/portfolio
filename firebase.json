@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "nate-kane-portfolio",
     "public": "dist",
     "ignore": [
       "firebase.json",
