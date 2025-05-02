@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './Projects.css';
 import ProjectCard from './components/ProjectCard';
 
@@ -41,19 +42,65 @@ const projectsData: Project[] = [
 ];
 
 const Projects = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  
+  const getNextIndex = (currentIndex: number, offset = 1) => {
+    return (currentIndex + offset) % projectsData.length;
+  };
+  
+  const handleCardClick = (index: number) => {
+    setActiveIndex(index);
+  };
+
   return (
     <section className="projects-section">
       <h2 className="section-header">Projects</h2>
       <div className="projects-container">
-        <div className="project-cards">
-          {projectsData.map((project, index) => (
+        <div className="card-slider">
+          <div className="main-card-wrapper" onClick={() => handleCardClick(getNextIndex(activeIndex))}>
             <ProjectCard
+              imageUrl={projectsData[activeIndex].imageUrl}
+              title={projectsData[activeIndex].title}
+              description={projectsData[activeIndex].description}
+              projectUrl={projectsData[activeIndex].projectUrl}
+              technologies={projectsData[activeIndex].technologies}
+            />
+          </div>
+          
+          <div className="preview-cards">
+            <div 
+              className="preview-card" 
+              onClick={() => handleCardClick(getNextIndex(activeIndex))}
+            >
+              <div className="preview-image">
+                <img 
+                  src={projectsData[getNextIndex(activeIndex)].imageUrl} 
+                  alt={`${projectsData[getNextIndex(activeIndex)].title} preview`} 
+                />
+              </div>
+            </div>
+            
+            <div 
+              className="preview-card secondary" 
+              onClick={() => handleCardClick(getNextIndex(activeIndex, 2))}
+            >
+              <div className="preview-image">
+                <img 
+                  src={projectsData[getNextIndex(activeIndex, 2)].imageUrl} 
+                  alt={`${projectsData[getNextIndex(activeIndex, 2)].title} preview`} 
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="project-indicators">
+          {projectsData.map((_, index) => (
+            <button
               key={index}
-              imageUrl={project.imageUrl}
-              title={project.title}
-              description={project.description}
-              projectUrl={project.projectUrl}
-              technologies={project.technologies}
+              className={`project-indicator ${index === activeIndex ? 'active' : ''}`}
+              onClick={() => handleCardClick(index)}
+              aria-label={`View ${projectsData[index].title}`}
             />
           ))}
         </div>
