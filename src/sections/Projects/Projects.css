@@ -3,7 +3,8 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  min-height: 80vh;
+  /* min-height: 80vh; */
+  min-height: 100vh; /* temporarily make this 100vh since it's currently the last section */
   padding: 0 2rem;
 }
 

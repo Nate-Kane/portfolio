@@ -1,0 +1,12 @@
+.footer-section {
+  padding: 0 2rem;
+}
+
+@media (max-width: 600px) {
+    .footer-section {
+        padding: 0 1rem;
+    }
+    .footer-section p {
+        font-size: 0.8rem;
+    }
+}
