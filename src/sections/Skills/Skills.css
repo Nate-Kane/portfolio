@@ -35,7 +35,7 @@
 
 .skill-category h3 {
   font-size: 2rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 2rem;
   color: #fff;
   background: linear-gradient(to right, #fff, rgba(41, 98, 255, 0.5));
   background-clip: text;
@@ -61,8 +61,18 @@
   transition: all 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
-  /* margin-top: 30px; */
+  margin-top: 30px;
   text-align: center;
+}
+
+.skill-badge img {
+    width: 36px;
+}
+
+.skill-badge img[src="/logos/scrum-agile.svg"] {
+    width: 50px;
+    height: 50px;
+    top: -52px;
 }
 
 .skill-badge:hover {
@@ -82,7 +92,7 @@
 }
 
 .skill-badge:hover .skill-logo {
-  animation: spin-on-pedestal 1s ease;
+  animation: spin-on-pedestal 0.8s ease-in-out;
 }
 
 @keyframes spin-on-pedestal {
@@ -90,13 +100,13 @@
     transform: translateX(-50%) rotate(0deg);
   }
   25% {
-    transform: translateX(-60%) rotate(10deg);
+    transform: translateX(-60%) rotate(8deg);
   }
   75% {
-    transform: translateX(-40%) rotate(-10deg);
+    transform: translateX(-40%) rotate(-4deg);
   }
   100% {
-    transform: translateX(-50%) rotate(0deg);
+    transform: translateX(-50%) rotate(2deg);
   }
 }
 
@@ -116,12 +126,12 @@
   }
   .skill-badge {
     padding: 0.5rem 0.75rem;
-    padding-top: 40px; /* Smaller space for the logo on mobile */
     font-size: 0.875rem;
+    margin-bottom: 10px;
   }
   .skill-logo {
     width: 30px;
     height: 30px;
-    top: -15px;
+    top: -35px;
   }
 } 

@@ -1,16 +1,16 @@
 import './Skills.css';
 
-// interface SkillBadgeProps {
-//   name: string;
-//   logo?: string;
-// }
+interface SkillBadgeProps {
+  name: string;
+  logo?: string;
+}
 
-// const SkillBadge = ({ name, logo }: SkillBadgeProps) => (
-//   <div className="skill-badge">
-//     {logo && <img src={logo} alt={`${name} logo`} className="skill-logo" />}
-//     {name}
-//   </div>
-// );
+const SkillBadge = ({ name, logo }: SkillBadgeProps) => (
+  <div className="skill-badge">
+    {logo && <img src={logo} alt={`${name} logo`} className="skill-logo" />}
+    {name}
+  </div>
+);
 
 const Skills = () => {
   return (
@@ -20,33 +20,33 @@ const Skills = () => {
         <div className="skill-category">
           <h3>Specialization</h3>
           <div className="skill-badges">
-            {/* <SkillBadge name="JavaScript" logo="/logos/javascript.svg" /> */}
-            <div className="skill-badge">HTML</div>
-            <div className="skill-badge">CSS</div>
-            <div className="skill-badge">TypeScript</div>
-            <div className="skill-badge">React</div>
+            <SkillBadge name="JavaScript" logo="/logos/javascript.svg" />
+            <SkillBadge name="HTML" logo="/logos/html.svg" />
+            <SkillBadge name="CSS" logo="/logos/css.svg" />
+            <SkillBadge name="TypeScript" logo="/logos/typescript.svg" />
+            <SkillBadge name="React" logo="/logos/react.svg" />
           </div>
         </div>
         
         <div className="skill-category">
           <h3>Toolkit</h3>
           <div className="skill-badges">
-            <div className="skill-badge">GitHub</div>
-            <div className="skill-badge">Scrum/Agile</div>
-            <div className="skill-badge">Firebase</div>
-            <div className="skill-badge">Vite</div>
-            <div className="skill-badge">Prompt Engineering</div>
-            <div className="skill-badge">Solution Research</div>
+            <SkillBadge name="GitHub" logo="/logos/github.svg" />
+            <SkillBadge name="Scrum/Agile" logo="/logos/scrum-agile.svg" />
+            <SkillBadge name="Firebase" logo="/logos/firebase.svg" />
+            <SkillBadge name="Vite" logo="/logos/vite.svg" />
+            <SkillBadge name="Prompt Engineering" logo="/logos/prompt-engineering.svg" />
+            <SkillBadge name="Solution Research" logo="/logos/solution-research.svg" />
           </div>
         </div>
         
         <div className="skill-category">
           <h3>Extended capabilities</h3>
           <div className="skill-badges">
-            <div className="skill-badge">React Native</div>
-            <div className="skill-badge">SQL</div>
-            <div className="skill-badge">AEM</div>
-            <div className="skill-badge">CMS (Wix, Shopify)</div>
+            <SkillBadge name="React Native" logo="/logos/react.svg" />
+            <SkillBadge name="SQL" logo="/logos/sql.svg" />
+            <SkillBadge name="AEM" logo="/logos/aem.svg" />
+            <SkillBadge name="CMS Platforms" logo="/logos/cms.svg" />
           </div>
         </div>
       </div>
